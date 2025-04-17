@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">hello</string>
+    <string name="button">Button</string>
+    <string name="hello_world">hello-world</string>
+    <string name="취소">취소</string>
+    <string name="확인">확인</string>
+    <string name="android">Android</string>
+    <string name="myName">202135835 정지호</string>
+    <string name="Enter_your_First_and_Last_name">Enter your First and Last name</string>
+    <string name="ACME_Corp_Caption">login</string>
+    <string name="login">login</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
