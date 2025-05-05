@@ -47,9 +47,37 @@ Format your response like:
 MBTI: {mbti}
 """
 
+def build_prompt_add(mbti: str, add: dict) -> str:
+    return f"""
+You are a music recommendation assistant.
 
+Given a user's MBTI type, suggest only :
+1. A recommended music only one genre
+2. With that genre, short explanation
+3. 3 to 5 specific song's name with artist names
+4. User's additional information is {add}
+
+Format your response like:
+- Genre: ...
+- Genre reasons: ...
+- Songs:
+  1. song name - artist names,  
+  2. song name - artist names, 
+  ...
+
+MBTI: {mbti}
+"""
+
+# ask gemini with just mbti
 def ask_gemini(mbti: str) -> dict:
     prompt = build_prompt(mbti)
+    response = model.generate_content(prompt)
+    response_json = response_2json(response.text)
+    return response_json
+
+# ask gemini with mbti, additional information. / IDK about dictionary. it depends on the survey's item
+def ask_add_gemini(mbti: str, add:dict) -> dict:
+    prompt = build_prompt_add(mbti, add)
     response = model.generate_content(prompt)
     response_json = response_2json(response.text)
     return response_json
