@@ -5,6 +5,6 @@ import retrofit2.http.Body;
 import retrofit2.http.POST;
 
 public interface GeminiApi {
-    @POST("/ask")
+    @POST("/MBTI")
     Call<ApiResponse> askGemini(@Body ApiRequest request);
 }

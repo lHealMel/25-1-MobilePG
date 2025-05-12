@@ -1,4 +1,5 @@
-import google.generativeai as genai
+from google import genai
+from google.genai import types
 import os
 import re
 from pydantic import BaseModel
@@ -6,25 +7,13 @@ import json
 
 # hide api key
 GEMINI_API_KEY = os.getenv("GOOGLE_API_KEY")
-genai.configure(api_key=GEMINI_API_KEY)
+client = genai.Client(api_key=GEMINI_API_KEY)
 
 
 class MbtiInfo(BaseModel):
     song: str
     genre: str
     reason: str
-
-
-generation_config = genai.types.GenerationConfig(
-    temperature=0.3,
-    # response_mime_type='application/json',
-    # response_schema=MbtiInfo
-)
-
-model = genai.GenerativeModel(
-    "gemini-2.0-flash",
-    generation_config=generation_config
-)
 
 
 def build_prompt(mbti: str) -> str:
@@ -47,6 +36,7 @@ Format your response like:
 MBTI: {mbti}
 """
 
+
 def build_prompt_add(mbti: str, add: dict) -> str:
     return f"""
 You are a music recommendation assistant.
@@ -67,20 +57,6 @@ Format your response like:
 
 MBTI: {mbti}
 """
-
-# ask gemini with just mbti
-def ask_gemini(mbti: str) -> dict:
-    prompt = build_prompt(mbti)
-    response = model.generate_content(prompt)
-    response_json = response_2json(response.text)
-    return response_json
-
-# ask gemini with mbti, additional information. / IDK about dictionary. it depends on the survey's item
-def ask_add_gemini(mbti: str, add:dict) -> dict:
-    prompt = build_prompt_add(mbti, add)
-    response = model.generate_content(prompt)
-    response_json = response_2json(response.text)
-    return response_json
 
 
 def response_2json(text: str) -> dict:
@@ -109,6 +85,33 @@ def response_2json(text: str) -> dict:
         "songs": songs
     }
 
+
+model_name = "gemini-2.0-flash"
+
+# ask gemini with just mbti
+def ask_gemini(mbti: str) -> dict:
+    prompt = build_prompt(mbti)
+    response = client.models.generate_content(
+        model=model_name,
+        contents=prompt,
+        config=types.GenerateContentConfig(
+            temperature=0.3
+        )
+    )
+    return response_2json(response.text)
+
+
+# ask gemini with mbti, additional information. / IDK about dictionary. it depends on the survey's item
+def ask_add_gemini(mbti: str, add: dict) -> dict:
+    prompt = build_prompt_add(mbti, add)
+    response = client.models.generate_content(
+        model=model_name,
+        contents=prompt,
+        config=types.GenerateContentConfig(
+            temperature=0.3
+        )
+    )
+    return response_2json(response.text)
 
 if __name__ == "__main__":
     res = ask_gemini("INFP")
