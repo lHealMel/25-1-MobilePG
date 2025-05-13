@@ -6,13 +6,17 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
+
+import com.example.mbpg.data.QuestionFactory;
+import com.example.mbpg.model.Question;
+import com.example.mbpg.util.MbtiCalculator;
 
 import java.util.List;
-
-import gachon.termproject.mbtimusic.data.QuestionFactory;
-import gachon.termproject.mbtimusic.model.Question;
-import gachon.termproject.mbtimusic.util.MbtiCalculator;
 
 public class MbtiTestActivity extends AppCompatActivity {
 
@@ -26,7 +30,13 @@ public class MbtiTestActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_mbti_test);
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.test), (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
+            return insets;
+        });
 
         questionText = findViewById(R.id.question_text);
         optionA = findViewById(R.id.option_a);

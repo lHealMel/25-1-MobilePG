@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/result"
     android:background="#FAF9F5"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,7 +15,7 @@
         <!-- MBTI 결과 텍스트 -->
         <TextView
             android:id="@+id/result_text"
-            android:text="당신의 MBTI는: INFP"
+            android:text="당신의 MBTI는: "
             android:textSize="22sp"
             android:textStyle="bold"
             android:textColor="#333333"
@@ -26,7 +27,7 @@
         <!-- 장르 추천 -->
         <TextView
             android:id="@+id/genre_text"
-            android:text="🎧 추천 장르: 감성 인디 / 포크"
+            android:text="🎧 추천 장르: 로딩중..."
             android:textSize="18sp"
             android:textColor="#666666"
             android:textStyle="italic"
@@ -45,7 +46,7 @@
 
             <TextView
                 android:id="@+id/songs_text"
-                android:text="• 아이유 - Love Poem\n• 적재 - 나랑 같이 걸을래\n• 잔나비 - 주저하는 연인들을 위해"
+                android:text="로딩중..."
                 android:textSize="16sp"
                 android:textColor="#333333"
                 android:layout_width="match_parent"

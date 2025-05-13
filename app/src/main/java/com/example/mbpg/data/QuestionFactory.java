@@ -1,9 +1,9 @@
 package com.example.mbpg.data;
 
+import com.example.mbpg.model.Question;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import gachon.termproject.mbtimusic.model.Question;
 
 public class QuestionFactory {
     public static List<Question> create() {
