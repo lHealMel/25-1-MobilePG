@@ -1,4 +1,4 @@
-package com.example.mbpg;
+package com.example.mbpg.util;
 
 public class ApiRequest {
     private String mbti;
