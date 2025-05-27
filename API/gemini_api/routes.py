@@ -29,7 +29,7 @@ def ask():
 def addition_ask():
     data = request.json
 
-    # if we could get additional question's answer to reflect the song, implement this;
+    # if we could get an additional question's answer to reflect the song, implement this;
     mbti = data.get("mbti", "").upper()
     addit = data.get("addit", "").upper()
     if not mbti:

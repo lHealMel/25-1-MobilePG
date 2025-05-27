@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/calendar"
+    android:background="#FAF9F5"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <CalendarView
+            android:id="@+id/calendarView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp" />
+
+        <TextView
+            android:id="@+id/selected_date_text"
+            android:text="선택한 날짜: 2025-05-05"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#333333"
+            android:layout_marginBottom="12dp"
+            android:layout_height="10dp"
+            android:layout_width="10dp"/>
+
+        <!-- Input MBTI -->
+        <EditText
+            android:id="@+id/mbti_input"
+            android:hint="오늘의 MBTI (예: INFP)"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_bg"
+            android:padding="14dp"
+            android:layout_marginBottom="12dp"
+            android:inputType="textCapCharacters"/>
+
+        <!-- Input mood -->
+        <EditText
+            android:id="@+id/mood_input"
+            android:hint="오늘의 기분 (좋음)"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/edittext_bg"
+            android:padding="14dp"
+            android:layout_marginBottom="20dp"/>
+
+        <!-- save -->
+        <Button
+            android:id="@+id/save_button"
+            android:text="기록 저장하기"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_button_rounded"
+            android:textColor="#FFFFFF"
+            android:padding="14dp"/>
+    </LinearLayout>
+</ScrollView>
