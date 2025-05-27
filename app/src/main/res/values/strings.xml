@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MBTImusic</string>
+    <string name="mbti_genre">추천 장르: %1$s</string>
+    <string name="mbti_songs">추천 곡:\n%1$s</string>
+    <string name="mbti_type">당신의 MBTI: %1$s</string>
+</resources>
