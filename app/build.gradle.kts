@@ -8,12 +8,14 @@ android {
 
     defaultConfig {
         applicationId = "com.example.mbpg"
-        minSdk = 34
+        minSdk = 33
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        manifestPlaceholders["redirectSchemeName"] = "com.example.mbpg"
+        manifestPlaceholders["redirectHostName"] = "auth"
     }
 
     buildTypes {
@@ -29,6 +31,9 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 
@@ -39,7 +44,13 @@ dependencies {
     implementation(libs.material)
     implementation(libs.activity)
     implementation(libs.constraintlayout)
+    implementation(libs.navigation.fragment)
+    implementation(libs.navigation.ui)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
+    implementation(files("libs/spotify-app-remote-release-0.8.0.aar"))
+    implementation(libs.auth)
+    // Gson (선택 사항, JSON 처리에 유용할 수 있음)
+    implementation(libs.gson)
 }
