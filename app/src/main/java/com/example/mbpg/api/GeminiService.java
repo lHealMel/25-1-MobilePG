@@ -7,7 +7,9 @@ import com.example.mbpg.api.pojo.ArtistInfoPojo;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
+import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -19,8 +21,17 @@ public class GeminiService {
 
     public static void getResultByMbti(String mbti, MbtiResultCallback callback) {
 
+        // Gemeni API의 응답 시간이 늘어남에 따라, timeout이 발생합니다.
+        // 때문에, OkHttp를 사용해 timeout 시간을 20초로 넉넉하게 설정합니다.
+        // Retrofit은 OkHttp기반 통신이기에, OkHttp로 설정이 가능합니다.
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                .readTimeout(20, TimeUnit.SECONDS)
+                .connectTimeout(10, TimeUnit.SECONDS)
+                .build();
+
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://10.0.2.2:5000/") // In emulator, localhost : 10.0.2.2
+                .baseUrl("http://10.0.2.2:5000/")
+                .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
