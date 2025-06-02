@@ -53,6 +53,7 @@
                 android:textSize="16sp" />
         </LinearLayout>
 
+        <!-- 이 부분에 재생되는 노래의 제목이 뜹니다.-->
         <TextView
             android:id="@+id/current_track_text"
             android:layout_width="wrap_content"
