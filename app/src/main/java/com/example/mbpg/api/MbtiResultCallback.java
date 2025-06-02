@@ -1,6 +1,4 @@
-package com.example.mbpg.data;
-
-import com.example.mbpg.model.MbtiResult;
+package com.example.mbpg.api;
 
 public interface MbtiResultCallback {
     void onResultReady(MbtiResult result);

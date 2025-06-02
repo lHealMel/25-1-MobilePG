@@ -1,7 +1,9 @@
 from flask import Blueprint, request, jsonify
 from .gemini_client import ask_gemini, ask_add_gemini
+from .spotify_client import song_search
 
 gemini_bp = Blueprint("gemini", __name__)
+spotify_bp = Blueprint("spotify", __name__)
 
 """
 Get the response from gemini
@@ -39,6 +41,21 @@ def addition_ask():
 
     try:
         response_text = ask_gemini(mbti)
+        return jsonify(response_text)
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+
+@spotify_bp.route("/search", methods=["POST"])
+def search():
+    data = request.json
+    artist = data.get("artist", "")
+    song_name = data.get("song", "")
+    if not song_name or not artist:
+        return jsonify({"error": "song name and artist name is required"}), 400
+
+    try:
+        response_text = song_search(artist, song_name)
         return jsonify(response_text)
     except Exception as e:
         return jsonify({"error": str(e)}), 500
