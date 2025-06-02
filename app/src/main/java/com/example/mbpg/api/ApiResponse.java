@@ -1,11 +1,15 @@
-package com.example.mbpg.util;
+package com.example.mbpg.api;
+
+import com.example.mbpg.api.pojo.ArtistInfoPojo;
+import com.example.mbpg.api.pojo.Tracks;
 
 import java.util.Map;
 
 public class ApiResponse {
     private String genre;
     private String genre_reason;
-    private Map<String, String> songs;
+    private Map<String, ArtistInfoPojo> songs;
+    private Tracks tracks;
 
     /*
         Usage
@@ -22,23 +26,33 @@ public class ApiResponse {
         return genre;
     }
 
+    public String getGenre_reason() {
+        return genre_reason;
+    }
+
+    public Map<String, ArtistInfoPojo> getSongs() {
+        return songs;
+    }
+
     public void setGenre(String genre) {
         this.genre = genre;
     }
 
-    public String getGenre_reason() {
-        return genre_reason;
-    }
 
     public void setGenre_reason(String genre_reason) {
         this.genre_reason = genre_reason;
     }
 
-    public Map<String, String> getSongs() {
-        return songs;
+
+    public void setSongs(Map<String, ArtistInfoPojo> songs) {
+        this.songs = songs;
     }
 
-    public void setSongs(Map<String, String> songs) {
-        this.songs = songs;
+    public Tracks getTracks() {
+        return tracks;
+    }
+
+    public void setTracks(Tracks tracks) {
+        this.tracks = tracks;
     }
 }

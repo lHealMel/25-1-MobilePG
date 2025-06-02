@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "53679309535",
+    "project_id": "mbti-app-81a96",
+    "storage_bucket": "mbti-app-81a96.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:53679309535:android:f1b02d331648083060df6a",
+        "android_client_info": {
+          "package_name": "com.example.mbpg"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSd4CjcKou0UxwOvrMpC3j5TNNwHg23vM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
