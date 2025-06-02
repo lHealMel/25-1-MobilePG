@@ -32,7 +32,7 @@ import java.util.List;
 public class ResultActivity extends AppCompatActivity {
 
     private static final String TAG = "ResultActivity";
-    private static final String CLIENT_ID = "***REMOVED***"; // client ID from API
+    private static final String CLIENT_ID = "17969602a6a74820b44f5cacaad948ba"; // client ID from API
     private static final String REDIRECT_URI = "com.example.mbpg://auth"; // callback uri
     private static final String SPOTIFY_PACKAGE_NAME = "com.spotify.music";
     private TextView genreText;

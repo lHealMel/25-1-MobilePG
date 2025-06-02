@@ -23,6 +23,7 @@ public class MbtiTestActivity extends AppCompatActivity {
     private int currentIndex = 0;
     private MbtiCalculator calculator;
     private TextView questionText;
+    private TextView progressText;
     private Button optionA, optionB;
 
     @Override
@@ -36,6 +37,7 @@ public class MbtiTestActivity extends AppCompatActivity {
             return insets;
         });
 
+        progressText = findViewById(R.id.progress_text);
         questionText = findViewById(R.id.question_text);
         optionA = findViewById(R.id.option_a);
         optionB = findViewById(R.id.option_b);
@@ -56,6 +58,9 @@ public class MbtiTestActivity extends AppCompatActivity {
             questionText.setText(q.getQuestion());
             optionA.setText(q.getOptionA());
             optionB.setText(q.getOptionB());
+
+            String progress = (currentIndex + 1) + " / " + questions.size();
+            progressText.setText(progress);
         }
     }
 
