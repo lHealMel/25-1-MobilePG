@@ -1,11 +1,14 @@
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
 import pprint
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
+secret = os.getenv("SPOTIFY_SECRET")
+client_id = os.getenv("CLIENT_ID")
 
 def song_search(artist, song_name):
-    client_id = '***REMOVED***'
-    secret = '***REMOVED***'
     client_credentials_manager = SpotifyClientCredentials(client_id=client_id, client_secret=secret)
     sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
     query = f'artist:{artist} track:{song_name}'
