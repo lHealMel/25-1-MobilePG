@@ -50,6 +50,8 @@ dependencies {
     implementation(libs.navigation.ui)
     implementation(libs.play.services.tasks)
     implementation(libs.firebase.auth)
+    implementation(libs.play.services.auth)
+    implementation(libs.googleid)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
@@ -57,4 +59,9 @@ dependencies {
     implementation(libs.auth)
     implementation(libs.gson)
     coreLibraryDesugaring(libs.desugar.jdk.libs)
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
+    implementation(libs.firebase.auth.ktx)
+    implementation(libs.credentials)
+    implementation(libs.credentials.play.services.auth)
 }

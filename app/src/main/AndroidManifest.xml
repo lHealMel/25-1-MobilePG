@@ -28,9 +28,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".LoginActivity"/>
+        <activity android:name=".RegisterActivity"/>
         <activity android:name=".MainActivity" />
         <activity android:name=".MbtiTestActivity" />
-        <activity android:name=".LoginActivity"/>
         <activity
             android:name=".ResultActivity"
             android:exported="true"

@@ -2,7 +2,6 @@ package com.example.mbpg;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
@@ -23,7 +22,6 @@ public class MbtiTestActivity extends AppCompatActivity {
     private List<Question> questions;
     private int currentIndex = 0;
     private MbtiCalculator calculator;
-
     private TextView questionText;
     private Button optionA, optionB;
 
@@ -47,19 +45,9 @@ public class MbtiTestActivity extends AppCompatActivity {
 
         showQuestion();
 
-        optionA.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                handleAnswer(true);
-            }
-        });
+        optionA.setOnClickListener(v -> handleAnswer(true));
 
-        optionB.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                handleAnswer(false);
-            }
-        });
+        optionB.setOnClickListener(v -> handleAnswer(false));
     }
 
     private void showQuestion() {
