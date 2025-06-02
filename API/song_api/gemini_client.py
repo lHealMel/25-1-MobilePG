@@ -3,6 +3,9 @@ from google.genai import types
 import os
 import re
 from pydantic import BaseModel
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # hide api key
 GEMINI_API_KEY = os.getenv("GOOGLE_API_KEY")
@@ -91,7 +94,7 @@ def ask_gemini(mbti: str) -> dict:
             temperature=0.3
         )
     )
-    print(response.text)
+    # print(response.text)
     return response_2json(response.text)
 
 
