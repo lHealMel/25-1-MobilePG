@@ -13,7 +13,6 @@
 *.cache
 
 # Gradle files
-.gradle/
 /**/build/
 
 # Sign-in keys, don't upload these ever!
@@ -36,7 +35,6 @@ venv/
 .env.*
 *.env
 .env
-API/.env
 
 
 # IDE files (PyCharm)
