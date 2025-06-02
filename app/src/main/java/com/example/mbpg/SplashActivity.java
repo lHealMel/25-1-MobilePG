@@ -24,9 +24,9 @@ public class SplashActivity extends AppCompatActivity {
             return insets;
         });
 
-        // Move to MainActivity after 2 seconds.
+        // Move to LoginActivity after 2 seconds.
         new Handler().postDelayed(() -> {
-            Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+            Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
             startActivity(intent);
             finish();
         }, 2000);

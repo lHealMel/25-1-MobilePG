@@ -30,6 +30,7 @@
         </activity>
         <activity android:name=".MainActivity" />
         <activity android:name=".MbtiTestActivity" />
+        <activity android:name=".LoginActivity"/>
         <activity
             android:name=".ResultActivity"
             android:exported="true"
