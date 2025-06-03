@@ -26,6 +26,12 @@ I made API part, connecting with android app.
 
 [Flask Api](https://github.com/lHealMel/25-1-MobilePG/tree/main/API) : API of app, using FLASK of python.
 
+API Folder(File) is not an element of Android app.
+
+It is easy to upload and manage, but must be executed separately in actual execution. (run.py)
+
+
+
 
 # Notice
 Spotify & API Key is managed by the '.env' file in the API folder.
