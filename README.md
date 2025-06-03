@@ -24,9 +24,11 @@ I made API part, connecting with android app.
 
 # Code
 
-[Flask Api](https://github.com/lHealMel/25-1-MobilePG/tree/main/API) : API of app, using FLASK of python.
+[Flask Api](https://github.com/lHealMel/25-1-MobilePG/tree/main/API) : API of app, using Flask of python.
 
-API Folder(File) is not an element of Android app.
+[API Processing part of Android App](https://github.com/lHealMel/25-1-MobilePG/tree/main/app/src/main/java/com/example/mbpg/api) : Processing(connecting) part of app. Communicate with Flask.
+
+Flask API Folder(File) is not an element of Android app.
 
 It is easy to upload and manage, but must be executed separately in actual execution. (run.py)
 
