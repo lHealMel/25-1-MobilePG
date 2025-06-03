@@ -39,3 +39,5 @@ It is easy to upload and manage, but must be executed separately in actual execu
 Spotify & API Key is managed by the '.env' file in the API folder.
 
 However, The .env file is private.
+
+You could watch the demo video [HERE](https://youtube.com/shorts/AG5A09nTUQ0?feature=share)
