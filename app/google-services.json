@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "961341989789",
+    "firebase_url": "https://mbpg-60034-default-rtdb.firebaseio.com",
+    "project_id": "mbpg-60034",
+    "storage_bucket": "mbpg-60034.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:961341989789:android:6a192c1710b3cbece20574",
+        "android_client_info": {
+          "package_name": "com.example.mbpg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "961341989789-poog5kd2amoi835ugl0khlehhj2kpqhk.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mbpg",
+            "certificate_hash": "fef13726b421e3e4716ae8b2e32b0bb5e626152e"
+          }
+        },
+        {
+          "client_id": "961341989789-9dtn7fpg3nbgubf7i1ei2cd1tu60l6kd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8UHZa6PNCp1nNt8KZIzAJtG78W3e7Y48"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "961341989789-9dtn7fpg3nbgubf7i1ei2cd1tu60l6kd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
