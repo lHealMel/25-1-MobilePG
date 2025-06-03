@@ -24,7 +24,7 @@ I made API part, connecting with android app.
 
 # Code
 
-[Flask Api](https://github.com/lHealMel/25-1-MobilePG/tree/Jiho/API) : API of app, using FLASK of python.
+[Flask Api](https://github.com/lHealMel/25-1-MobilePG/tree/main/API) : API of app, using FLASK of python.
 
 
 # Notice
