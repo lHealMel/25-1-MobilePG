@@ -11,7 +11,7 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class SpotifyService { // 클래스명은 적절히 변경하세요.
+public class SpotifyService {
 
     private static final String TAG = "SpotifyService";
 
@@ -37,8 +37,7 @@ public class SpotifyService { // 클래스명은 적절히 변경하세요.
                         // 여러 트랙 중 어떤 것을 선택할지 결정해야 합니다.
                         // 여기서는 첫 번째 트랙을 사용하거나, popularity가 가장 높은 트랙을 선택할 수 있습니다.
                         // 혹은 isPlayable이 true인 첫 번째 트랙을 찾을 수도 있습니다.
-                        // 제공된 JSON 예제에서는 is_playable이 false이고 preview_url이 null입니다.
-                        // 실제로는 이 값들을 확인하여 재생 가능한 트랙을 우선적으로 선택해야 합니다.
+                        // 이 값들을 확인하여 재생 가능한 트랙을 우선적으로 선택해야 합니다.
 
                         TrackItem selectedTrack = null;
 
@@ -56,8 +55,7 @@ public class SpotifyService { // 클래스명은 적절히 변경하세요.
                             selectedTrack = tracksObj.getItems().get(0);
                             Log.d(TAG, "No playable track found, using first track: " + selectedTrack.getName() + " (isPlayable: " + selectedTrack.isPlayable() + ")");
                         }
-                        // 만약 isPlayable이 false인 경우, Spotify SDK로 재생이 안될 수 있습니다.
-                        // previewUrl이 있다면 그걸로 30초 미리듣기는 가능할 수 있습니다.
+                        // isPlayable이 false인 경우, Spotify SDK로 재생이 안됩니다.
 
 
                         String trackUri = selectedTrack.getUri();
@@ -67,16 +65,13 @@ public class SpotifyService { // 클래스명은 적절히 변경하세요.
 
                         String artistName = "Unknown Artist";
                         if (selectedTrack.getArtists() != null && !selectedTrack.getArtists().isEmpty()) {
-                            // 여러 아티스트가 있을 수 있으므로, 첫 번째 아티스트 이름을 사용하거나 모든 아티스트 이름을 조합
                             artistName = selectedTrack.getArtists().get(0).getName();
                         }
 
+                        // 앨범 아트의 첫번째 이미지 선택
                         String albumArtUrl = null;
                         if (selectedTrack.getAlbum() != null && selectedTrack.getAlbum().getImages() != null && !selectedTrack.getAlbum().getImages().isEmpty()) {
-                            // 앨범 아트 이미지는 여러 크기가 제공될 수 있습니다.
-                            // 보통 첫 번째 이미지가 가장 크거나 대표 이미지입니다.
-                            // 필요에 따라 특정 크기의 이미지를 선택할 수 있습니다 (예: height가 300인 이미지).
-                            albumArtUrl = selectedTrack.getAlbum().getImages().get(0).getUrl(); // 첫번째 이미지 (주로 640x640)
+                            albumArtUrl = selectedTrack.getAlbum().getImages().get(0).getUrl();
                         }
 
                         Log.i(TAG, "Track URI: " + trackUri);

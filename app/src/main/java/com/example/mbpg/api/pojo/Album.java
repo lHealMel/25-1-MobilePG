@@ -14,7 +14,6 @@ public class Album {
     @SerializedName("release_date")
     private String releaseDate;
 
-
     public String getName() {
         return name;
     }
@@ -22,7 +21,6 @@ public class Album {
     public void setName(String name) {
         this.name = name;
     }
-
     public List<Image> getImages() {
         return images;
     }
