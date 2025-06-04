@@ -41,3 +41,5 @@ Spotify & API Key is managed by the '.env' file in the API folder.
 However, The .env file is private.
 
 You could watch the demo video [HERE](https://youtube.com/shorts/AG5A09nTUQ0?feature=share)
+
+You could watch the project plan, more information and time line also [HERE](https://rune-dime-218.notion.site/1bdab37001d980d5ba42e11c9b08a810?source=copy_link)
